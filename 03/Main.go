@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	s := stack.Stack[string]{}
+	s := stack.NewStackWithCap[string](1000)
 
 	for i := 0; i < 1000; i++ {
 		s.Push("第" + strconv.Itoa(i+1) + "个元素")

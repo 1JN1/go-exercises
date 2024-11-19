@@ -9,6 +9,18 @@ type Stack[T any] struct {
 // EmptyInfo 栈为空时的错误提示信息
 const EmptyInfo = "stack is empty"
 
+const DefaultCap = 100
+
+func NewStack[T any]() *Stack[T] {
+
+	return NewStackWithCap[T](DefaultCap)
+}
+
+func NewStackWithCap[T any](cap int) *Stack[T] {
+
+	return &Stack[T]{data: make([]T, 0, cap), top: 0}
+}
+
 // Push 入栈
 func (s *Stack[T]) Push(v T) {
 
