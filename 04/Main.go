@@ -7,9 +7,9 @@ import (
 
 func main() {
 
-	q := queue.Queue[int]{}
+	q := queue.NewQueue[int]()
 
-	for i := 0; i < 1000000; i++ {
+	for i := 0; i < 1000; i++ {
 		q.EnQueue(i + 1)
 	}
 
