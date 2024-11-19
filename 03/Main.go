@@ -3,15 +3,16 @@ package main
 import (
 	"fmt"
 	"go-exercises/03/stack"
+	"strconv"
 )
 
 func main() {
 
-	s := stack.NewStack[int]()
+	s := stack.Stack[string]{}
 
-	s.Push(1)
-	s.Push(2)
-	s.Push(3)
+	for i := 0; i < 1000; i++ {
+		s.Push("第" + strconv.Itoa(i+1) + "个元素")
+	}
 
 	fmt.Println(s.Peek())
 
